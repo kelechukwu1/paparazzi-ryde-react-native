@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ai-image-app",
-    "slug": "ai-image-app",
+    "name": "Paparazzi Ryde",
+    "slug": "paparazzi-ryde",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
