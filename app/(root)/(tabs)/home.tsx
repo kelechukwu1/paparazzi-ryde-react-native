@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Image, Text, TouchableOpacity, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import * as Location from 'expo-location'
+import { router } from 'expo-router'
+// import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 
 const recentRides = [
     {
@@ -107,6 +109,7 @@ const recentRides = [
         }
     }
 ]
+
 const Home = () => {
     const { setUserLocation, setDestinationLocation } = useLocationStore()
     const [hasPermissions, setHasPermissions] = useState(false)
@@ -115,7 +118,10 @@ const Home = () => {
 
     const handleSignOut = () => { }
 
-    const handleDestinationPress = () => { }
+    const handleDestinationPress = (location: { latitude: number, longitude: number, address: string }) => {
+        setDestinationLocation(location)
+        router.push("/(root)/find-ride")
+    }
 
     useEffect(() => {
         const requestLocation = async () => {
@@ -176,6 +182,18 @@ const Home = () => {
                             containerStyle="bg-white shadow-md shadow-neutral-300"
                             handlePress={handleDestinationPress}
                         />
+
+                        {/* <GooglePlacesAutocomplete
+                            placeholder='Search'
+                            onPress={(data, details = null) => {
+                                // 'details' is provided when fetchDetails = true
+                                console.log(data, details);
+                            }}
+                            query={{
+                                key: "",
+                                language: 'en',
+                            }}
+                        /> */}
 
                         <Text className='text-xl font-JakartaBold mt-5 mb-3'>
                             Your Current Location

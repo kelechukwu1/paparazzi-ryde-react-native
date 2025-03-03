@@ -56,6 +56,8 @@ const Map = () => {
     })
 
     useEffect(() => {
+        //will remove below line sooon
+        setDrivers(drivers)
         if (Array.isArray(drivers)) {
             if (!userLatitude || !userLongitude) return;
 
