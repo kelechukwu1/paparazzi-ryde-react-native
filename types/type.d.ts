@@ -1,4 +1,4 @@
-import {TextInputProps, TouchableOpacityProps} from "react-native";
+import { TextInputProps, TouchableOpacityProps } from "react-native";
 
 declare interface Driver {
     driver_id: number;
@@ -36,15 +36,15 @@ declare interface MapProps {
 declare interface Ride {
     origin_address: string;
     destination_address: string;
-    origin_latitude: number;
-    origin_longitude: number;
-    destination_latitude: number;
-    destination_longitude: number;
+    origin_latitude: string;
+    origin_longitude: string;
+    destination_latitude: string;
+    destination_longitude: string;
     ride_time: number;
-    fare_price: number;
+    fare_price: string;
     payment_status: string;
     driver_id: number;
-    user_email: string;
+    // user_email: string;
     created_at: string;
     driver: {
         first_name: string;
@@ -68,10 +68,10 @@ declare interface GoogleInputProps {
     containerStyle?: string;
     textInputBackgroundColor?: string;
     handlePress: ({
-                      latitude,
-                      longitude,
-                      address,
-                  }: {
+        latitude,
+        longitude,
+        address,
+    }: {
         latitude: number;
         longitude: number;
         address: string;
@@ -105,19 +105,19 @@ declare interface LocationStore {
     destinationLongitude: number | null;
     destinationAddress: string | null;
     setUserLocation: ({
-                          latitude,
-                          longitude,
-                          address,
-                      }: {
+        latitude,
+        longitude,
+        address,
+    }: {
         latitude: number;
         longitude: number;
         address: string;
     }) => void;
     setDestinationLocation: ({
-                                 latitude,
-                                 longitude,
-                                 address,
-                             }: {
+        latitude,
+        longitude,
+        address,
+    }: {
         latitude: number;
         longitude: number;
         address: string;

@@ -4,11 +4,11 @@ import { GoogleInputProps } from '@/types/type'
 import { icons } from '@/constants'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 
-const googlePlacesApikey = process.env.EXPO_PUBLIC_GOOGLE_API_KEY
+const goMapsProApikey = process.env.EXPO_PUBLIC_GOMAPS_PRO_API_KEY
 
 const GoogleTextInput = ({ icon, initialLocation, containerStyle, textInputBackgroundColor, handlePress }: GoogleInputProps) => {
     return (
-        <View className={`flex flex-row gap-3 items-center justify-center relative z-50 rounded-full ${containerStyle} mb-5`}>
+        <View className={`flex flex-row gap-3 items-center justify-center relative z-50 rounded-xl ${containerStyle} mb-5`}>
             <GooglePlacesAutocomplete
                 fetchDetails={true}
                 debounce={200}
@@ -48,7 +48,7 @@ const GoogleTextInput = ({ icon, initialLocation, containerStyle, textInputBackg
                     })
                 }}
                 query={{
-                    key: googlePlacesApikey,
+                    key: goMapsProApikey,
                     language: 'en'
                 }}
                 renderLeftButton={() => (
