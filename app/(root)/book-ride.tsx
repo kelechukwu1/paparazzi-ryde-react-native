@@ -58,7 +58,7 @@ const BookRide = () => {
                         <View className="flex flex-row items-center justify-between w-full border-b border-white py-3">
                             <Text className="text-lg font-JakartaRegular">Ride Price</Text>
                             <Text className="text-lg font-JakartaRegular text-[#0CC25F]">
-                                ${driverDetails?.price}
+                                ₦{driverDetails?.price}
                             </Text>
                         </View>
 

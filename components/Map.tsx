@@ -86,7 +86,7 @@ const Map = () => {
             initialRegion={region}
             className="w-full h-full rounded-2xl"
             tintColor="black"
-            mapType="mutedStandard"
+            mapType="standard"
             showsPointsOfInterest={false}
             showsUserLocation={true}
             userInterfaceStyle="light"

@@ -72,6 +72,17 @@ export const calculateRegion = ({
     };
 };
 
+const getExchangeRate = async () => {
+    try {
+        const response = await fetch("https://api.exchangerate-api.com/v4/latest/USD");
+        const data = await response.json();
+        return data.rates.NGN; // Get USD to NGN rate
+    } catch (error) {
+        console.log("Error fetching exchange rate:", error);
+        return 1500; // Fallback rate
+    }
+};
+
 export const calculateDriverTimes = async ({
     markers,
     userLatitude,
@@ -94,6 +105,7 @@ export const calculateDriverTimes = async ({
         return;
 
     try {
+        const exchangeRate = await getExchangeRate(); // Fetch dynamic rate
         const timesPromises = markers.map(async (marker) => {
             const responseToUser = await fetch(
                 `https://maps.gomaps.pro/maps/api/directions/json?origin=${marker.latitude},${marker.longitude}&destination=${userLatitude},${userLongitude}&key=${goMapsProAPIKey}`,
@@ -110,9 +122,12 @@ export const calculateDriverTimes = async ({
                 dataToDestination.routes[0].legs[0].duration.value; // Time in seconds
 
             const totalTime = (timeToUser + timeToDestination) / 60; // Total time in minutes
-            const price = (totalTime * 0.5).toFixed(2); // Calculate price based on time
+            const priceInUSD = totalTime * 0.5;
 
-            return { ...marker, time: totalTime, price };
+            // const exchangeRate = 1500; // Update to the current rate
+            const priceInNGN = Math.round(priceInUSD * exchangeRate); // Convert to NGN
+
+            return { ...marker, time: totalTime, price: priceInNGN };
         });
 
         return await Promise.all(timesPromises);
