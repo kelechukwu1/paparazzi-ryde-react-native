@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import { ClerkProvider, ClerkLoaded } from '@clerk/clerk-expo'
 import { tokenCache } from "@/lib/auth";
+import { LogBox } from 'react-native';
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!
 
@@ -14,6 +15,7 @@ export default function RootLayout() {
 
   // Prevent the splash screen from auto-hiding before asset loading is complete.
   SplashScreen.preventAutoHideAsync();
+  LogBox.ignoreLogs(["Clerk:"])
 
   const [loaded] = useFonts({
     "Jakarta-Bold": require("../assets/fonts/PlusJakartaSans-Bold.ttf"),

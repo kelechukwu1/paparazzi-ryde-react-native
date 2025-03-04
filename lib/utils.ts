@@ -11,16 +11,17 @@ export const sortRides = (rides: Ride[]): Ride[] => {
 };
 
 export function formatTime(minutes: number): string {
-    const formattedMinutes = +minutes?.toFixed(0) || 0;
+    const formattedMinutes = Math.round(minutes);
 
     if (formattedMinutes < 60) {
-        return `${minutes} min`;
+        return `${formattedMinutes} min`;
     } else {
         const hours = Math.floor(formattedMinutes / 60);
         const remainingMinutes = formattedMinutes % 60;
         return `${hours}h ${remainingMinutes}m`;
     }
 }
+
 
 export function formatDate(dateString: string): string {
     const date = new Date(dateString);

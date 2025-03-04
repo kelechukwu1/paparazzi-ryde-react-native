@@ -11,7 +11,7 @@ const GoogleTextInput = ({ icon, initialLocation, containerStyle, textInputBackg
         <View className={`flex flex-row gap-3 items-center justify-center relative z-50 rounded-xl ${containerStyle} mb-5`}>
             <GooglePlacesAutocomplete
                 fetchDetails={true}
-                debounce={200}
+                debounce={300}
                 placeholder='Where do you want to go?'
                 styles={{
                     textInputContainer: {
@@ -25,7 +25,7 @@ const GoogleTextInput = ({ icon, initialLocation, containerStyle, textInputBackg
                     textInput: {
                         backgroundColor: textInputBackgroundColor || 'white',
                         fontSize: 16,
-                        fontWeight: 600,
+                        fontWeight: "600",
                         marginTop: 5,
                         width: '100%',
                         borderRadius: 200,

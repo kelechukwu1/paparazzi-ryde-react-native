@@ -18,6 +18,8 @@ const ConfirmRide = () => {
                         <CustomButton title='Select Ride' onPress={() => router.push('/(root)/book-ride')} />
                     </View>
                 )}
+                nestedScrollEnabled={true}
+                contentContainerStyle={{ flexGrow: 1 }}
             />
         </RideLayout>
     )
