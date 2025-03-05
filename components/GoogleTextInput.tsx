@@ -51,6 +51,7 @@ const GoogleTextInput = ({ icon, initialLocation, containerStyle, textInputBackg
                     key: goMapsProApikey,
                     language: 'en'
                 }}
+                onFail={(e) => console.log(e)}
                 renderLeftButton={() => (
                     <View className='justify-center items-center w-6 h-6'>
                         <Image source={icon ? icon : icons.search} className='w-6 h-6' resizeMode='contain' />

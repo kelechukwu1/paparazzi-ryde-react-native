@@ -13,7 +13,7 @@ import { useDriverStore, useLocationStore } from "@/store";
 import { Driver, MarkerData } from "@/types/type";
 import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
 
-const directionsAPI = process.env.EXPO_PUBLIC_GOMAPS_PRO_API_KEY;
+const goMapsProApiKey = process.env.EXPO_PUBLIC_GOMAPS_PRO_API_KEY;
 
 const Map = () => {
     const {
@@ -126,7 +126,7 @@ const Map = () => {
                                 latitude: destinationLatitude,
                                 longitude: destinationLongitude,
                             }}
-                            apikey={directionsAPI!}
+                            apikey={goMapsProApiKey!}
                             strokeColor="#0286FF"
                             strokeWidth={2}
                         />
@@ -138,54 +138,3 @@ const Map = () => {
 };
 
 export default Map;
-// <MapView
-//     provider={PROVIDER_DEFAULT}
-//     className="w-full h-full"
-//     tintColor="black"
-//     mapType="mutedStandard"
-// // showsPointsOfInterest={false}
-// // initialRegion={region}
-// // showsUserLocation={true}
-// // userInterfaceStyle="light"
-// >
-{/* {markers.map((marker, index) => (
-                <Marker
-                    key={marker.id}
-                    coordinate={{
-                        latitude: marker.latitude,
-                        longitude: marker.longitude,
-                    }}
-                    title={marker.title}
-                    image={
-                        selectedDriver === +marker.id ? icons.selectedMarker : icons.marker
-                    }
-                />
-            ))}
-
-            {destinationLatitude && destinationLongitude && (
-                <>
-                    <Marker
-                        key="destination"
-                        coordinate={{
-                            latitude: destinationLatitude,
-                            longitude: destinationLongitude,
-                        }}
-                        title="Destination"
-                        image={icons.pin}
-                    />
-                    <MapViewDirections
-                        origin={{
-                            latitude: userLatitude!,
-                            longitude: userLongitude!,
-                        }}
-                        destination={{
-                            latitude: destinationLatitude,
-                            longitude: destinationLongitude,
-                        }}
-                        apikey={directionsAPI!}
-                        strokeColor="#0286FF"
-                        strokeWidth={2}
-                    />
-                </>
-            )} */}
-{/* </MapView> */ }
