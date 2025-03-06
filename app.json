@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-       "bundleIdentifier": "com.kelechukwu.paparazziryde"
+      "bundleIdentifier": "com.kelechukwu.paparazziryde"
     },
     "android": {
       "adaptiveIcon": {
@@ -47,6 +47,10 @@
         "projectId": "edb34358-8ea3-46ff-8493-4fc118056433"
       }
     },
-    "platforms": ["ios", "android"]
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "owner": "kelechukwu"
   }
 }
