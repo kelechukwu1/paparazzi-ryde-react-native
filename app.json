@@ -52,6 +52,7 @@
             }
           },
           "production": {}
+        }
       }
     },
     "platforms": [
@@ -60,5 +61,4 @@
     ],
     "owner": "kelechukwu"
   }
-}
 }
