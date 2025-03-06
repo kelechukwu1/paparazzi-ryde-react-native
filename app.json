@@ -44,15 +44,7 @@
         "origin": "https://uber.com/"
       },
       "eas": {
-        "projectId": "edb34358-8ea3-46ff-8493-4fc118056433",
-        "build": {
-          "preview": {
-            "android": {
-              "buildType": "apk"
-            }
-          },
-          "production": {}
-        }
+        "projectId": "edb34358-8ea3-46ff-8493-4fc118056433"
       }
     },
     "platforms": [
