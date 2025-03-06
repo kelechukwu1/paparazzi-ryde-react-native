@@ -15,19 +15,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "server",
-      "favicon": "./assets/images/favicon.png"
+      },
+      "package": "com.kelechukwu.paparazziryde"
     },
     "plugins": [
-      [ "expo-router", { "origin": "https://uber.com/" }],
+      [
+        "expo-router",
+        {
+          "origin": "https://uber.com/"
+        }
+      ],
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
@@ -36,6 +37,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": "https://uber.com/"
+      },
+      "eas": {
+        "projectId": "edb34358-8ea3-46ff-8493-4fc118056433"
+      }
+    },
+    "platforms": ["ios", "android"]
   }
 }
